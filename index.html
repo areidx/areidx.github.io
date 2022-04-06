@@ -114,13 +114,13 @@
 </li>
 <li><p>下载<a target="_blank" rel="noopener" href="https://xperifirm.com/">Xperifirm</a></p>
 </li>
-<li><p>运行下载 <code>mono XperiFirm-x64.exe</code><br><img src="https://i.imgur.com/2ujiOUd.png"><br><img src="https://i.imgur.com/gRzALfX.png"><br>点击下载会开始下载然后自动打包但是因为国内的网络环境问题可能中断(这中断就会重新开始下载),所以我这里用Manual.简单解释一下 按照要求创建文件夹(注意有空格用单引号或者双引号),创建子文件夹,使用工具下载制定文件即可(我使用的fdm);等待下载完毕点击 Merge 选择文件夹等待即可<br><img src="https://i.imgur.com/PmHYOaB.png"><br>好了之后文件是这样的<br><img src="https://i.imgur.com/0DksF6X.png"><br>使用Flashtool把文件夹打包然后后缀改成ftf即可,这里我为了方便直接使用newflasher <a target="_blank" rel="noopener" href="https://forum.xda-developers.com/t/tool-newflasher-xperia-command-line-flasher.3619426/">xda链接</a> 下载解压放进这个文件夹下 linux使用 i686 x64 x86都行 给执行权限就行 win请用exe应该点击就行<br>手机绿灯连接,输入n  n 等待刷进去即可</p>
+<li><p>运行下载 <code>mono XperiFirm-x64.exe</code><br> <img src="/images/%E6%97%A5%E7%89%88xz1c%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E5%88%B7%E6%9C%BA/XperiFirm-man.png" alt="主界面"><br><img src="/../images/%E6%97%A5%E7%89%88xz1c%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E5%88%B7%E6%9C%BA/XperiFirm-download-page.png" alt="下载界面"><br>点击下载会开始下载然后自动打包但是因为国内的网络环境问题可能中断(这中断就会重新开始下载),所以我这里用Manual.简单解释一下 按照要求创建文件夹(注意有空格用单引号或者双引号),创建子文件夹,使用工具下载制定文件即可(我使用的fdm);等待下载完毕点击 Merge 选择文件夹等待即可<br><img src="/../images/%E6%97%A5%E7%89%88xz1c%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E5%88%B7%E6%9C%BA/XperiFirm-download-marge.png" alt="下载"><br>好了之后文件是这样的(newflasher.x64不是下载的文件)<br><img src="/../images/%E6%97%A5%E7%89%88xz1c%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E5%88%B7%E6%9C%BA/XperiFirm-files.png"><br>使用Flashtool把文件夹打包然后后缀改成ftf即可,这里我为了方便直接使用newflasher <a target="_blank" rel="noopener" href="https://forum.xda-developers.com/t/tool-newflasher-xperia-command-line-flasher.3619426/">xda链接</a> 下载解压放进这个文件夹下 linux使用 i686 x64 x86都行 给执行权限就行 win请用exe应该点击就行<br>手机绿灯连接,输入n  n 等待刷进去即可</p>
 </li>
 </ul>
 </li>
 <li><p>解bl锁</p>
 <ul>
-<li>先申请解锁码 <a target="_blank" rel="noopener" href="https://developer.sony.com/develop/open-devices/get-started/unlock-bootloader#unlock-code">网站</a> 最下面选择设备输入imei码(拨号界面输入*#06#,没有拨号器的话可以在关于手机看到,不能开机一般在sim卡那里会有个小纸条拉出来也有)提交即可<br><img src="https://imgur.com/Xvw4ABk.png"></li>
+<li>先申请解锁码 <a target="_blank" rel="noopener" href="https://developer.sony.com/develop/open-devices/get-started/unlock-bootloader#unlock-code">网站</a> 最下面选择设备输入imei码(拨号界面输入*#06#,没有拨号器的话可以在关于手机看到,不能开机一般在sim卡那里会有个小纸条拉出来也有)提交即可<br><img src="/../images/%E6%97%A5%E7%89%88xz1c%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E5%88%B7%E6%9C%BA/sony-bl-webpage.png" alt="申请界面"></li>
 <li>解锁<br>有了解锁码蓝灯模式连接电脑 输入 <code>fastboot oem unlock 0x解锁码</code> 等待解锁即可<br>解开之后在拨号界面输入 <code>*#*#7378423#*#*</code> 然后选择 Service info &gt; Configuration &gt; Rooting Status 如果是 Bootloader unlocked: Yes 就是解锁成功</li>
 </ul>
 </li>
@@ -128,7 +128,7 @@
 </li>
 <li><p>magisk root<br>需要这个版本的固件的boot文件我这个日版刷机文件里没有需要一些操作</p>
 <ul>
-<li><p>得到boot.img<br>下载<a target="_blank" rel="noopener" href="https://forum.xda-developers.com/t/tool-unsin-sin-v3-v4-v5-unpacker-v1-13.3128106/">unsin</a>相应文件,解压<br>把固件里面根目录下的kernel_xxx.sin的文件放在这个unsin一起 <code>./unsin 文件名</code> 即可会得到同名的.img的文件;已经能直接使用了但是好像5II还有几个什么的不能直接用,还需要使用AIK 修改东西这里顺便写一下(其他的应该是boot_xxx.sin这个文件)<br>下载 <a target="_blank" rel="noopener" href="https://forum.xda-developers.com/t/tool-android-image-kitchen-unpack-repack-kernel-ramdisk-win-android-linux-mac.2073775/">AIK-Linux</a>解压<br>把解密的img文件复制到这个目录下 <code>./unpackimg.sh 文件名</code><br>成功会在这个目录下得到ramdisk文件夹 结构:<br><img src="https://i.imgur.com/eB1iqrA.png"><br>5ii应该会有一个 fatab.qcom文件 注释 system_ext这一行 </p>
+<li><p>得到boot.img<br>下载<a target="_blank" rel="noopener" href="https://forum.xda-developers.com/t/tool-unsin-sin-v3-v4-v5-unpacker-v1-13.3128106/">unsin</a>相应文件,解压<br>把固件里面根目录下的kernel_xxx.sin的文件放在这个unsin一起 <code>./unsin 文件名</code> 即可会得到同名的.img的文件;已经能直接使用了但是好像5II还有几个什么的不能直接用,还需要使用AIK 修改东西这里顺便写一下(其他的应该是boot_xxx.sin这个文件)<br>下载 <a target="_blank" rel="noopener" href="https://forum.xda-developers.com/t/tool-android-image-kitchen-unpack-repack-kernel-ramdisk-win-android-linux-mac.2073775/">AIK-Linux</a>解压<br>把解密的img文件复制到这个目录下 <code>./unpackimg.sh 文件名</code><br>成功会在这个目录下得到ramdisk文件夹 结构:<br><img src="/../images/%E6%97%A5%E7%89%88xz1c%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E5%88%B7%E6%9C%BA/AIK-unpack.png"><br>5ii应该会有一个 fatab.qcom文件 注释 system_ext这一行 </p>
 <p>运行 <code>./repackimg.sh</code> 重新打包得到的就是需要的boot.img文件</p>
 </li>
 <li><p>magisk安装<br>下载<a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases">magisk</a>安装<br>选择安装magisk &gt; 修改一个文件 选择之前得到的img文件 等待然后会生成一个magisk修改之后的boot文件,可以把这个文件复制进sd卡.(因为我这个日版直接放在手机里面进去rec找不到了)<br>在关机状态下按住关机键和音量下按键等警告界面消失放开 进入rec 选择install 选择存储地方 选择 刷img(右下角那个) 选择之前制作的magisk修补之后的img文件刷进boot分区,刷写成功重启进入手机即可.</p>
@@ -140,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/04/%E6%97%A5%E7%89%88xz1c%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E5%88%B7%E6%9C%BA/" data-id="cl1lb4wlj0002hrfzahplhfep" data-title="日版xz1c在linux下的刷机" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/04/%E6%97%A5%E7%89%88xz1c%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E5%88%B7%E6%9C%BA/" data-id="cl1ngk514000243fzgimqbnqz" data-title="日版xz1c在linux下的刷机" class="article-share-link">Share</a>
       
       
       
@@ -195,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/17/demo-test/" data-id="cl1lb4wle0000hrfz55n8h3sf" data-title="demo-test" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/17/demo-test/" data-id="cl1ngk50y000043fz2v87cd29" data-title="demo-test" class="article-share-link">Share</a>
       
       
       
@@ -246,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/17/hello-world/" data-id="cl1lb4wli0001hrfz6wac1xvd" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/17/hello-world/" data-id="cl1ngk512000143fz2bz5b0hq" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
